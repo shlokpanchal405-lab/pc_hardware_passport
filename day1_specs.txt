@@ -1,0 +1,49 @@
+DAY 1 - PC HARDWARE PASSPORT TASK 1: HARDWARE SPECIFICATION REPORT
+
+1.  COMPUTER IDENTIFICATION Manufacturer: ASUS Laptop family: ASUS TUF
+    Gaming A15 System model: FA506NCG_FA506NCG Motherboard/baseboard
+    manufacturer: ASUSTeK COMPUTER INC. Motherboard/baseboard product:
+    FA506NCG Motherboard/baseboard version: 1.0 Operating system:
+    Windows (edition/version not recorded)
+
+2.  PROCESSOR (CPU) Processor: AMD Ryzen 7 7445HS with Radeon 740M
+    Graphics Cores: 6 Logical processors: 12 Base speed: 3.20 GHz Speed
+    at the time of the submitted screenshot: 2.33 GHz Note: Current CPU
+    speed changes with workload and power settings.
+
+3.  MEMORY (RAM) Installed memory shown by Task Manager: 16 GB Memory
+    available to Windows shown: 15.3 GB Memory in use in the submitted
+    screenshot: 8.3 GB (54%) Note: Memory usage is a live reading and
+    can change.
+
+4.  GRAPHICS (GPU) Graphics name: AMD Radeon 740M Graphics GPU
+    utilization in the GPU screenshot: 0% GPU temperature in the GPU
+    screenshot: 39 degrees C Dedicated GPU memory: 512 MB total; 404 MB
+    in use at capture time Shared GPU memory: 7.6 GB total; 0.4 GB in
+    use at capture time Total GPU memory shown: 8.1 GB Driver version:
+    32.0.22058.1 Driver date: 03-02-2026 DirectX version: 12 (FL 12.2)
+    Physical location: PCI bus 5, device 0, function 0 Note: GPU memory
+    usage values are readings at the time of the screenshot.
+
+5.  STORAGE Drive: Disk 0 (C:) Drive type: SSD (NVMe) SSD model: WD PC
+    SN5000S SDEQNSJ-512G-1002 Reported capacity: 512,110,190,592 bytes
+    (approximately 512.1 GB; marketed as 512 GB)
+
+6.  MOTHERBOARD / BASEBOARD Manufacturer: ASUSTeK COMPUTER INC.
+    Product/model: FA506NCG Version: 1.0
+
+7.  DATA COLLECTION METHOD CPU, memory and GPU details: Windows Task
+    Manager > Performance. System model: Windows System Information
+    (msinfo32). SSD model, type and capacity: PowerShell
+    Get-PhysicalDisk command. Motherboard manufacturer, product and
+    version: PowerShell Get-CimInstance Win32_BaseBoard command.
+
+8.  IMPORTANT NOTES The CPU speed, memory usage, GPU utilization, GPU
+    temperature and GPU memory use are live readings and can change over
+    time. The SSD capacity is reported in bytes by Windows; the drive is
+    marketed as a 512 GB model. No additional hardware details have been
+    assumed.
+
+Suggested folder: pc_hardware_passport
+
+Required report filename: day1_specs.txt
