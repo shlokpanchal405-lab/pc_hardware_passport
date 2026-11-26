@@ -1,0 +1,59 @@
+TASK 3 — SLOT USAGE MAP
+PC HARDWARE PASSPORT | DAY 2
+
+SYSTEM
+Laptop: ASUS TUF Gaming A15 FA506NCG
+Inspection method: Windows PowerShell / Task Manager / detected-device information
+No physical disassembly was performed.
+
+MEMORY (RAM)
+Slot / position     Status       Evidence
+DIMM 0              USED         PowerShell reported one 16 GB Micron module at DIMM 0.
+DIMM 1              FREE         Task Manager > Performance > Memory reported "Slots used: 1 of 2".
+
+STORAGE (M.2 / NVMe)
+Slot / position             Status       Evidence
+Installed M.2 NVMe position USED         WD PC SN5000S 512 GB NVMe SSD detected in Windows.
+Additional M.2 position(s)  UNKNOWN      Software output confirms the installed drive, but does not establish the total number of physical M.2 sockets or the status of any additional socket.
+
+SATA
+SATA connector(s)           UNKNOWN      No reliable software or manufacturer evidence collected to confirm the number or occupancy of SATA connectors. No disassembly performed.
+
+PCI EXPRESS
+Physical PCIe expansion slot(s)  UNKNOWN  Windows listed PCI Express Root Ports / Root Complex. These are logical platform connections and do not prove the presence or count of physical user-accessible expansion slots.
+
+EVIDENCE DETAILS
+1. Memory device count:
+   Get-CimInstance Win32_PhysicalMemoryArray | Select MemoryDevices, MaxCapacity
+   Reported MemoryDevices: 2
+
+2. Installed memory module:
+   Get-CimInstance Win32_PhysicalMemory | Select DeviceLocator, Capacity, Manufacturer, PartNumber
+   DeviceLocator: DIMM 0
+   Capacity: 17179869184 bytes (16 GB)
+   Manufacturer: Micron Technology
+   Part number: MTC8C1084S1SC56BD1 K
+
+3. Memory slot usage:
+   Task Manager > Performance > Memory
+   Slots used: 1 of 2
+
+4. Installed storage:
+   Get-PhysicalDisk | Select FriendlyName, MediaType, BusType, Size
+   Drive: WD PC SN5000S SDEQNSJ-512G-1002
+   Media type: SSD
+   Bus type: NVMe
+   Capacity reported: 512,110,190,592 bytes (approximately 512 GB)
+
+5. Detected disk:
+   Get-Disk
+   Disk 0: WD PC SN5000S SDEQNSJ-512G-1002
+   Bus type: NVMe
+
+STATUS KEY
+USED  = A device is detected in the position.
+FREE  = Evidence confirms the position is unoccupied.
+UNKNOWN = Available evidence cannot reliably establish the position's status or even its total count.
+
+IMPORTANT
+The Windows memory count and Task Manager slot count support two RAM positions with one occupied. PCI Express Root Ports must not be counted as physical expansion slots. Unknown entries are intentionally left unknown rather than inferred.
